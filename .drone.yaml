@@ -15,6 +15,6 @@ steps:
       dockerfile: Dockerfile
 trigger:
   branch: 
-    - parraletz-kube2iam-fix
+    - parraletz-build011
   event:
     - push
