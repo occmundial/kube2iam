@@ -1,0 +1,20 @@
+---
+kind: pipeline
+type: kubernetes
+name: parraletz-kube2iam-fix
+steps:
+  - name: build
+    image: plugins/docker
+    settings:
+      repo: occmundial/kube2iam
+      tags: 0.11-occ
+      username:
+        from_secret: docker_devops_user
+      password:
+        from_secret: docker_devops_password
+      dockerfile: Dockerfile
+trigger:
+  branch: 
+    - parraletz-kube2iam-fix
+  event:
+    - push
